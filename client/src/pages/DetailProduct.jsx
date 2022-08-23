@@ -17,7 +17,7 @@ function DetailProduct() {
     const navigate = useNavigate();
     // check
     const [show, setShow] = useState(false);
-  
+
     const handleCheck = () => {
       if (show === false) {
         setShow(true);

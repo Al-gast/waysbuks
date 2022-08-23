@@ -75,7 +75,7 @@ func (r *repository) FindTransactionID(TransactionID []int) ([]models.Topping, e
 
 func (r *repository) FindCartsTransaction(TrxID int) ([]models.Cart, error) {
 	var carts []models.Cart
-	err := r.db.Debug().Preload("Product").Preload("Topping").Debug().Find(&carts, "transaction_id = ?", TrxID).Error
+	err := r.db.Preload("Product").Preload("Topping").Find(&carts, "transaction_id = ?", TrxID).Error
 
 	return carts, err
 }

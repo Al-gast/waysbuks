@@ -20,9 +20,7 @@ const AddToping = () => {
       title: "",
       price: "",
     }); //Store product data
-  
-    //handle chahnge data on from
-  
+
     //handle chahnge data on from
     const handleChange = (e) => {
       setform({

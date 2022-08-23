@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import CoffeeCart from '../assets/CoffeeCart.svg'
 import Bin from '../assets/bin1.svg'
 import cartModules from "../assets/styles/cart.module.css"
+import ModalCart from "../components/modal/ModalCart"
 
 import ModalPayment from '../components/modal/ModalPayment';
 import Navbar from '../components/Nav/Navbar';
@@ -16,9 +17,6 @@ import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-    // const  [showPayment, setShowPayment] = useState(false)
-    // const handleShow = () => setShowPayment(true)
-    // const handleClose = () => setShowPayment(false)
 
     const [state, dispatch] = useContext(UserContext);
   // modal
@@ -49,9 +47,9 @@ console.log(cart)
   // pay
     const form = {
     status: "pending",
-    total: 1111,
+    total: resultTotal,
 };
-
+ console.log(form)
     const handleSubmit = useMutation(async (e) => {
     const config = {
     headers: {
@@ -175,7 +173,7 @@ console.log(cart)
               </div>
             </div>
           </div>
-          {/* <ModalCart showTrans={showTrans} close={handleClose} /> */}
+          <ModalCart showTrans={showTrans} close={handleClose} />
         </section>
       </div>
     </>
