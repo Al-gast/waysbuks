@@ -17,9 +17,9 @@ import Navbar from '../components/Nav/Navbar';
 function Home () {
 // modal login
 const [show, setShow] = useState(false);
+const [state] = useContext(UserContext);   // user data
 const handleClick = () => setShow(true);
 //
-const [state] = useContext(UserContext);   // user data
 
 // Fetching product data from database
 let { data: products } = useQuery('productsCache', async () => {
